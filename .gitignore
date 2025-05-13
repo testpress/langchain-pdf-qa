@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+
+# Poetry
+poetry.lock
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# PDFs / Chroma DB (optional)
+*.pdf
+.chroma/
+
