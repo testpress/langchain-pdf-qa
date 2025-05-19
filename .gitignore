@@ -15,3 +15,5 @@ __pycache__/
 *.pdf
 .chroma/
 
+data/
+figures/
