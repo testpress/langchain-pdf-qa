@@ -1,24 +1,24 @@
-[tool.poetry]
+[project]
 name = "langchain-pdf-qa"
 version = "0.1.0"
-description = ""
-authors = ["Bharathwaaj S <bharath@testpress.in>"]
+description = "Ask questions from any PDF using OpenAI + LangChain + Chroma"
+authors = [
+    {name = "Bharathwaaj S", email = "bharath@testpress.in"}
+]
 readme = "README.md"
-packages = [{include = "langchain_pdf_qa", from = "src"}]
-
-[tool.poetry.dependencies]
-python = "^3.12"
-langchain = "^0.3.25"
-openai = "^1.78.1"
-tiktoken = "^0.9.0"
-faiss-cpu = "^1.11.0"
-langchain-community = "^0.3.24"
-pypdf = "^5.5.0"
-python-dotenv = "^1.1.0"
-chromadb = "^1.0.9"
-langchain-openai = "^0.3.16"
-
+requires-python = ">=3.13.5"
+dependencies = [
+    "langchain>=0.3.25",
+    "openai>=1.78.1",
+    "tiktoken>=0.9.0",
+    "faiss-cpu>=1.11.0",
+    "langchain-community>=0.3.24",
+    "pypdf>=5.5.0",
+    "python-dotenv>=1.1.0",
+    "chromadb>=1.0.9",
+    "langchain-openai>=0.3.16",
+]
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build" 

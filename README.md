@@ -16,12 +16,18 @@ This project lets you upload a PDF and ask natural language questions about its 
 ```bash
 git clone https://github.com/yourname/langchain-pdf-qa.git
 cd langchain-pdf-qa
-````
+```
 
-### 2. Install dependencies
+### 2. Install uv (if not already installed)
 
 ```bash
-poetry install
+curl -Ls https://astral.sh/uv/install.sh | sh
+```
+
+### 3. Install dependencies
+
+```bash
+uv sync
 ```
 
 ### 3. Add your OpenAI API key
@@ -39,7 +45,7 @@ Then edit `.env` and replace with your API key.
 ## ▶️ Run the Q\&A CLI
 
 ```bash
-poetry run python ask_pdf.py
+uv run python ask_pdf.py
 ```
 
 Place a PDF file (e.g., `example.pdf`) in the root and run the script. You’ll be prompted to ask questions like:
@@ -88,6 +94,44 @@ Do not commit your `.env` file or PDF files to GitHub. Use `.gitignore` to keep 
 * Add a Streamlit or Flask UI
 * Use FAISS or Pinecone as vector store
 * Deploy to Hugging Face Spaces or Render
+
+---
+
+## 🛠️ Development with uv
+
+This project uses [uv](https://github.com/astral-sh/uv) for dependency management and Python environment handling.
+
+### Common uv commands:
+
+```bash
+# Install dependencies
+uv sync
+
+# Run a script
+uv run python ask_pdf.py
+
+# Add a new dependency
+uv pip install package-name
+
+# Remove a dependency
+uv pip uninstall package-name
+
+# Update dependencies
+uv sync --upgrade
+
+# Run tests
+uv run python -m pytest
+
+# Activate the virtual environment (if needed)
+source .venv/bin/activate
+```
+
+### Why uv?
+
+- **Fast**: Much faster than pip and Poetry
+- **Reliable**: Better dependency resolution
+- **Simple**: Single tool for environment management, dependency installation, and running scripts
+- **Modern**: Built for Python 3.13+ with modern tooling
 
 ---
 

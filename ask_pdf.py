@@ -14,7 +14,7 @@ load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY", "sk-...")
 
 # 2. Load PDF
-loader = PyPDFLoader("/Users/bharath/Downloads/1640701.pdf")
+loader = PyPDFLoader("/Users/bharath/Downloads/ncert_crop.pdf")
 pages = loader.load_and_split()
 
 # 3. Split into chunks
